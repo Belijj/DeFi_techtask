@@ -29,7 +29,7 @@
 
 3. **Frontend Launch**
    - cd ./client
-   - `npm install
+   - npm install
    - serve -s build
 
 4. **Tests**

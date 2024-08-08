@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './App.css'; // Import the CSS file
+import './App.css';
 
 function App() {
   const [messages, setMessages] = useState([]);
@@ -13,8 +13,8 @@ function App() {
       const message = JSON.parse(event.data);
       setMessages((prevMessages) => [...prevMessages, message]);
     };
-    ws.onclose = () => console.log('WebSocket disconnected');
-    ws.onerror = (error) => console.error('WebSocket error:', error);
+    ws.onclose = () => console.log('WS disconnected');
+    ws.onerror = (error) => console.error('WS err:', error);
 
     setSocket(ws);
 

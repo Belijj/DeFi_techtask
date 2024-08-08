@@ -1,0 +1,39 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+      
+  data-generator:
+      build:
+        context: ./microservices
+        dockerfile: Dockerfile
+      depends_on:
+        - rabbitmq
+      command: ["python", "data-generator.py"]
+
+
+  microservices:
+    build:
+      context: ./microservices
+      dockerfile: Dockerfile
+    depends_on:
+      - rabbitmq
+    ports:
+      - "8001:8001"
+    command: ["uvicorn", "socket-service:app", "--host", "0.0.0.0", "--port", "8001"]
+
+  
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - "3000:3000"
+    image: node:18
+    working_dir: /app
+    volumes:
+      - ./client:/app
+    command: ["npm", "start"]

@@ -21,23 +21,26 @@
 
 1. Navigate to the RabbitMQ directory:
    ```bash
-   cd ./rabbitmq
-   docker-compose up(wait for instalation)
+      cd ./rabbitmq
+      docker-compose up(wait for instalation)
+### 2. Microservices Launch
    ```bash
-2. cd ./microservices
-    2.1 ./venv/scripts/Activate
-    2.2 python data-generator.py
-    2.3 uvicorn socket-service:app --host 0.0.0.0, --port 8001
+      cd ./microservices
+      2.1 ./venv/scripts/Activate
+      2.2 python data-generator.py
+      2.3 uvicorn socket-service:app --host 0.0.0.0, --port 8001
+### 3. FrontEnd Launch
+   ```bash
+       3. cd ./client
+       3.1 nmp install
+       3.2 serve-s build
 
-3. cd ./client
-    3.1 nmp install
-    3.2 serve-s build
-
-4. Tests:
-    4.1 Webscoket+ rabbitMQ test
-        4.2 Launch RabbitMQ and activate the virtual environment (venv)if it has not been activated previously.
-        4.3 cd ./docs
-        4.4 pytest -v
-    4.5 Client test
-        4.6 cd ./client
-        4.7 npm test
+### 4. Tests
+   ```bash
+       4.1 Webscoket+ rabbitMQ test
+           4.2 Launch RabbitMQ and activate the virtual environment (venv)if it has not been activated previously.
+           4.3 cd ./docs
+           4.4 pytest -v
+       4.5 Client test
+           4.6 cd ./client
+           4.7 npm test

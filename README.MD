@@ -1,20 +1,29 @@
-Workflow:
+# Application Workflow and Launch Instructions
 
-Data generator simulates traffic by generating messages every 5 sec, and sends them into rabbitMQ queue.
-Socket-service consumes messages from rabbitMQ and returns them via /ws endpoint.
-This endpoint is also capable of receiving data from client(data is sent to rabbitMQ queue).
-Client part displays messages from data queue, and also provides functionality to send messages to the queue.
+## Workflow Overview
 
+1. **Data Generator**:
+   - Simulates traffic by generating messages every 5 seconds.
+   - Sends generated messages to a RabbitMQ queue.
 
+2. **Socket Service**:
+   - Consumes messages from the RabbitMQ queue.
+   - Returns messages via the `/ws` endpoint.
+   - Capable of receiving data from the client, sending it back to the RabbitMQ queue.
 
+3. **Client**:
+   - Displays messages from the data queue.
+   - Provides functionality to send messages to the queue.
 
+## Application Launch Steps
 
+### 1. RabbitMQ Setup
 
-Application Launch:
-
-1. cd ./rabbitmq 
-    1.1 docker-compose up(wait for instalation)
-
+1. Navigate to the RabbitMQ directory:
+   ```bash
+   cd ./rabbitmq
+   docker-compose up(wait for instalation)
+   ```bash
 2. cd ./microservices
     2.1 ./venv/scripts/Activate
     2.2 python data-generator.py

@@ -8,10 +8,10 @@ async def connect_to_rabbitmq():
     while True:
         try:
             connection = await aio_pika.connect_robust("amqp://guest:guest@localhost/")
-            print("Connected to RabbitMQ")
+            print("Conn OK")
             return connection
         except aio_pika.exceptions.AMQPConnectionError as e:
-            print(f"Connection failed: {e}. Retrying in 5 seconds...")
+            print(f"Conn failed: {e}. Retry in 5 sec")
             await asyncio.sleep(5)
 
 async def generate_data():
@@ -27,9 +27,9 @@ async def generate_data():
                         aio_pika.Message(body=json.dumps(data).encode()),
                         routing_key='data_queue',
                     )
-                    print(f"Message published: {data}")
+                    print(f"Msg published: {data}")
                 except aio_pika.exceptions.AMQPError as e:
-                    print(f"Failed to publish message: {e}. Retrying in 5 seconds...")
+                    print(f"Failed to publish msg: {e}. Retry in 5 sec")
                     await asyncio.sleep(5)
                 await asyncio.sleep(5)
 

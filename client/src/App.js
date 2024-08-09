@@ -7,7 +7,7 @@ function App() {
   const [socket, setSocket] = useState(null);
 
   useEffect(() => {
-    const ws = new WebSocket('ws://192.168.105.115:8001/ws');
+    const ws = new WebSocket('ws://127.0.0.1:8001/ws');
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data);

@@ -46,4 +46,4 @@
      - (Make sure that RabbitMQ is running and venv is active).
      - cd ./backend
      - pytest -v
-# Test simulates 1000 users actively commincating in the chat, sending 100 messages per second. On my local machine(16gb ram, I3 10100) test works fine.
+# Test simulates 1000 users actively commincating in the chat, sending 100 messages per second. On my local machine(16gb ram, I3 10100) test works fine.(You can adjust number of users and messages per second in ws_test.py)

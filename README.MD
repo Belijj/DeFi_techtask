@@ -2,7 +2,7 @@
 
 ## Overview
 
-### This project sets up a WebSocket server using FastAPI that handles real-time communication between clients. It integrates with RabbitMQ for message queuing and persistence. The server also interacts with an SQLite database to store and retrieve chat messages.
+### This project sets up a WebSocket server using FastAPI that handles real-time communication between clients. It integrates with RabbitMQ for message queuing and persistence. The server also interacts with an PostgreSQL database to store and retrieve chat messages.
 
 ### Features
 - Real-time communication: Supports multiple WebSocket clients for live messaging.

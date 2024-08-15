@@ -1,4 +1,4 @@
-#This repository shows my knowledge of websockets and message brokers(RabbitMQ). There is also a chatbot capable of handling 1000 active users at "chatbot" branch.
+# This repository shows my knowledge of websockets and message brokers(RabbitMQ). There is also a chatbot capable of handling 1000 active users at "chatbot" branch.
 
 # Application Workflow and Launch Instructions
 

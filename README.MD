@@ -7,16 +7,16 @@
 
 <img src = "romka.excalidraw.png" width = "600" height= "400"/>
 
-### Data Generator
+<h1><a href = "./microservices/data-generator.py">Data Generator</a></h1>
 - Simulates traffic by generating messages every 5 seconds.
 - Sends generated messages to a RabbitMQ queue.
 
-### Socket Service
+<h1><a href = "./microservices/socket-service.py">Socket Service</a></h1>
 - Consumes messages from the RabbitMQ queue.
 - Returns messages via the `/ws` endpoint.
 - Capable of receiving data from the client and sending it back to the RabbitMQ queue.
 
-### Client
+<h1><a href = "./client">Client</a></h1>
 - Displays messages from the data queue.
 - Provides functionality to send messages to the queue.
 

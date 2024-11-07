@@ -5,7 +5,7 @@
 ## Workflow Overview
 
 
-<img src = "romka.excalidraw.png" width = "150" height= "100"/>
+<img src = "romka.excalidraw.png" width = "600" height= "400"/>
 
 ### Data Generator
 - Simulates traffic by generating messages every 5 seconds.

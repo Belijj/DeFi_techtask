@@ -47,7 +47,7 @@ function App() {
         <button onClick={handleSendMessage} className="send-button">Send</button>
       </div>
       <h1>Real-time Messages</h1>
-      <div className="message-frame">
+      <div className="message-frame"> 
         <ul className="message-list">
           {messages.map((msg, index) => (
             <li key={index} className="message-item">{msg.message}</li>
